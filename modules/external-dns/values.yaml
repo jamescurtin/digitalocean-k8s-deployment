@@ -1,0 +1,7 @@
+# See https://github.com/bitnami/charts/tree/master/bitnami/external-dns
+digitalocean:
+  secretName: "digital-ocean-token"
+interval: "15s"
+provider: "digitalocean"
+policy: "sync"
+txtPrefix: "xdns-"

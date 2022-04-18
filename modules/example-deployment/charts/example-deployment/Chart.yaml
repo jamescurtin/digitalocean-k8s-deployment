@@ -1,0 +1,4 @@
+name: example-deployment
+apiVersion: v2
+description: Hello world demonstration
+version: 0.0.1

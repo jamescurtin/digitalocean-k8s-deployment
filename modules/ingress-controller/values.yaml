@@ -1,0 +1,9 @@
+# See https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx
+controller:
+  config:
+    use-proxy-protocol: true
+  service:
+    annotations:
+      "service.beta.kubernetes.io/do-loadbalancer-enable-proxy-protocol": "true"
+    externalTrafficPolicy: "Local"
+    type: "LoadBalancer"
