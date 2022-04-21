@@ -7,11 +7,11 @@ variable "loadbalancer_id" {
 variable "loadbalancer_hostname" {
   description = "The hostname associated with the loadbalancer."
   type        = string
-  nullable = false
+  nullable    = false
 }
 
 variable "loadbalancer_name" {
-    description = "The name of the loadbalancer."
-    type = string
-    nullable = false
+  description = "The name of the loadbalancer."
+  type        = string
+  nullable    = false
 }

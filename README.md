@@ -76,9 +76,29 @@ The Helm chart contained within the `example-deployment` module provides an exam
 
 * When a new service is deployed, there is a race condition between the creation of a DNS entry (`external-dns`) and the HTTP challenge required to create a TLS certificate (`cert-manager`). This results in cert-manager attempting to resolve the DNS before it propagates, receiving a `NXDOMAIN` response, then needing to wait for the record's TTL to expire before re-trying the challenge. You can read more about the issue [here](https://github.com/cert-manager/cert-manager/issues/4246). To reliably avoid this issue, manually create the DNS entry in Digital Ocean long enough before deploying the corresponding service so that the record has time to propagate.
 
+
+## Development
+
+Install [`dagger`](https://docs.dagger.io/1200/local-dev) to run the local CI pipeline.
+Dagger depends on Docker engine.
+
+To run the lint suite:
+
+```bash
+dagger do lint
+```
+
+If linting fails, many style guidelines can be automatically applied by:
+
+```bash
+dagger do fix
+```
+
+`dagger` may take a long time the first time it runs, as it must build docker images.
+You can increase the output verbosity to observe the build progress with the flag `--log-format plain`
+
 ## To Do
 
-- [ ] Add linting and terraform validation to CI
 - [ ] Add Sentinel unit tests
 - [ ] Configure CD
 - [ ] Automate dependency updates

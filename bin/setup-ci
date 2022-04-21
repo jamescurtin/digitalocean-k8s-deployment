@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+export GOPATH=$HOME/.go
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
+apt-get update && apt-get install -y \
+    apt-transport-https \
+    curl \
+    gnupg \
+    software-properties-common
+
+curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add -
+apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+
+curl https://baltocdn.com/helm/signing.asc | apt-key add -
+apt-add-repository "deb https://baltocdn.com/helm/stable/debian/ all main"
+
+apt-get update && apt-get install -y \
+    helm \
+    terraform
+
+curl -L -O https://go.dev/dl/go1.18.1.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.18.1.linux-amd64.tar.gz
+rm go1.18.1.linux-amd64.tar.gz
+
+go install mvdan.cc/sh/v3/cmd/shfmt@latest
