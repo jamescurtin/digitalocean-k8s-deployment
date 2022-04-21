@@ -27,7 +27,7 @@ resource "helm_release" "ingress_nginx" {
   set {
     # See https://docs.digitalocean.com/products/kubernetes/how-to/configure-load-balancers/#accessing-by-hostname
     name  = "controller.service.annotations.service\\.beta\\.kubernetes\\.io/do-loadbalancer-hostname"
-    value =var.loadbalancer_hostname
+    value = var.loadbalancer_hostname
   }
   set {
     # See https://docs.digitalocean.com/products/kubernetes/how-to/configure-load-balancers/#name
