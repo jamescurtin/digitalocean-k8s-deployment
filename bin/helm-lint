@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+find . -name "Chart.yaml" -printf '%h\n' | while read -r chart; do
+    helm lint "$chart"
+done
