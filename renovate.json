@@ -1,5 +1,16 @@
 {
     "extends": [
         "config:base"
-    ]
+    ],
+    "ignorePaths": [
+        "cue.mod/**"
+    ],
+    "regexManagers": [
+        {
+          "fileMatch": ["^bin/setup-ci$"],
+          "matchStrings": ["GO_VERSION=(?<currentValue>.*?)\\n"],
+          "depNameTemplate": "golang",
+          "datasourceTemplate": "golang"
+        }
+      ]
 }

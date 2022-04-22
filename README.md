@@ -101,4 +101,3 @@ You can increase the output verbosity to observe the build progress with the fla
 
 - [ ] Add Sentinel unit tests
 - [ ] Configure CD
-- [ ] Automate dependency updates

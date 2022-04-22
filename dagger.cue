@@ -19,6 +19,7 @@ dagger.#Plan & {
                         "dagger.cue",
                         "LICENSE",
                         "README.md",
+                        "renovate.json",
                     ]
                 }
             }
