@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+GO_VERSION=1.18.1
 export GOPATH=$HOME/.go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
@@ -20,7 +21,7 @@ apt-get update && apt-get install -y \
     helm \
     terraform
 
-curl -L -O https://go.dev/dl/go1.18.1.linux-amd64.tar.gz
+curl -L -O https://go.dev/dl/go${GO_VERSION}.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.18.1.linux-amd64.tar.gz
 rm go1.18.1.linux-amd64.tar.gz
 
