@@ -1,4 +1,4 @@
-name: terraform-lint
+name: Linting
 
 on:
   push:
