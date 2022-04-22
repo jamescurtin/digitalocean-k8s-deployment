@@ -75,6 +75,12 @@ resource "digitalocean_kubernetes_cluster" "this" {
   depends_on = [
     digitalocean_loadbalancer.this
   ]
+  # Ignoring version, which is auto-upgraded by the cluster.
+  lifecycle {
+    ignore_changes = [
+      version,
+    ]
+  }
 }
 
 # Due to k8s limitation, pods cannot communicate via the IP of an external LB.

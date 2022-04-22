@@ -38,7 +38,7 @@ resource "helm_release" "cluster_issuer" {
   force_update     = true
   max_history      = 3
 
-  set {
+  set_sensitive {
     name  = "letsencrypt_email"
     value = var.letsencrypt_email
   }

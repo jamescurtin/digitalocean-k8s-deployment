@@ -18,7 +18,7 @@ resource "helm_release" "example_deployment" {
   force_update     = true
   max_history      = 3
 
-  set {
+  set_sensitive {
     name  = "hostname"
     value = var.external_domain
   }
