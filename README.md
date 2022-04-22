@@ -39,6 +39,9 @@ This project can be cloned and used as-is, except that the value of `terraform.c
     1. On the `Settings` -> `General` tab, ensure that:
        * "Execution Mode" is set to "Remote"
        * "Apply Method" is set to "Auto Apply"
+1. Enable Continuous Deployment via Github
+   * Create a [Terraform Cloud token](https://app.terraform.io/app/settings/tokens)
+   * In your Github repo, go to `Settings` -> `Secrets` -> `Actions`. Create a new repository secret called `TF_API_TOKEN` using the token value obtained in the previous step.
 
 ## Creating the k8s cluster
 
@@ -100,4 +103,3 @@ You can increase the output verbosity to observe the build progress with the fla
 ## To Do
 
 - [ ] Add Sentinel unit tests
-- [ ] Configure CD
