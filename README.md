@@ -108,7 +108,3 @@ dagger do fix
 
 `dagger` may take a long time the first time it runs, as it must build docker images.
 You can increase the output verbosity to observe the build progress with the flag `--log-format plain`
-
-## To Do
-
-- [ ] Add Sentinel unit tests
