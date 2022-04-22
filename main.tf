@@ -10,13 +10,17 @@ terraform {
       source  = "digitalocean/digitalocean"
       version = "~> 2.0"
     }
-    kubernetes = {
-      source  = "hashicorp/kubernetes"
-      version = "~> 2.10"
-    }
     helm = {
       source  = "hashicorp/helm"
       version = "~> 2.5"
+    }
+    kubectl = {
+      source  = "gavinbunney/kubectl"
+      version = ">= 1.7.0"
+    }
+    kubernetes = {
+      source  = "hashicorp/kubernetes"
+      version = "~> 2.10"
     }
     random = {
       source  = "hashicorp/random"
@@ -127,6 +131,10 @@ module "cert_automation" {
   depends_on = [
     module.ingress_controller,
   ]
+}
+
+module "gatekeeper" {
+  source = "./modules/gatekeeper"
 }
 
 # Uncomment for an example of the DNS record and TLS cert automation in action
