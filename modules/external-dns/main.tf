@@ -45,11 +45,11 @@ resource "helm_release" "external_dns" {
   force_update     = true
   max_history      = 3
 
-  set {
+  set_sensitive {
     name  = "domainFilters[0]"
     value = var.external_domain
   }
-  set {
+  set_sensitive {
     name  = "txtOwnerId"
     value = var.external_dns_owner_id
   }
