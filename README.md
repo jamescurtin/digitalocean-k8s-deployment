@@ -1,5 +1,8 @@
 # Deploy Kubernetes to DigitalOcean with Terraform
 
+[![Continuous Deployment](https://github.com/jamescurtin/digitalocean-k8s-deployment/actions/workflows/terraform.yaml/badge.svg)](https://github.com/jamescurtin/digitalocean-k8s-deployment/actions/workflows/terraform.yaml)
+[![Linting](https://github.com/jamescurtin/digitalocean-k8s-deployment/actions/workflows/lint.yaml/badge.svg)](https://github.com/jamescurtin/digitalocean-k8s-deployment/actions/workflows/lint.yaml)
+
 [![DigitalOcean Referral Badge](https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%202.svg)](https://www.digitalocean.com/?refcode=672862fab7f2)
 
 Provision a Kubernetes cluster in DigitalOcean via Terraform.
