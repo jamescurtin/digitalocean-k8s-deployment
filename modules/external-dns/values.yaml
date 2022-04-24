@@ -5,3 +5,7 @@ interval: "15s"
 provider: "digitalocean"
 policy: "sync"
 txtPrefix: "xdns-"
+resources:
+  requests:
+    memory: "64Mi"
+    cpu: "100m"

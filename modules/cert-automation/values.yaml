@@ -1,0 +1,20 @@
+# See https://artifacthub.io/packages/helm/cert-manager/cert-manager
+resources:
+  requests:
+    cpu: 10m
+    memory: 32Mi
+cainjector:
+  resources:
+    requests:
+      cpu: 10m
+      memory: 32Mi
+startupapicheck:
+  resources:
+    requests:
+      cpu: 10m
+      memory: 32Mi
+webhook:
+  resources:
+    requests:
+      cpu: 10m
+      memory: 32Mi
