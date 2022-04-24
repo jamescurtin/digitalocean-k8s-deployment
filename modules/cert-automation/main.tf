@@ -26,6 +26,10 @@ resource "helm_release" "cert_manager" {
     name  = "installCRDs"
     value = "true"
   }
+
+  values = [
+    file("${path.module}/values.yaml")
+  ]
 }
 
 resource "helm_release" "cluster_issuer" {
