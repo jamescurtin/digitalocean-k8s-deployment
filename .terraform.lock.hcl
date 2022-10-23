@@ -25,17 +25,18 @@ provider "registry.terraform.io/digitalocean/digitalocean" {
 }
 
 provider "registry.terraform.io/gavinbunney/kubectl" {
-  version     = "1.7.0"
-  constraints = "1.7.0"
+  version     = "1.14.0"
+  constraints = "1.14.0"
   hashes = [
-    "h1:bV/pgodikYFjxmPVW2ihYdWxpq4Io96ZU4QMqBzFfdQ=",
-    "zh:2c5b132e9edfcfaa4f16140d8bd811b771fe58325b1c7f488a8bb126350cd3a3",
-    "zh:3b2f51707caeac49e32c9cf95f2dc4b7c88cd02526a560d02f397be1a6cf3dbc",
-    "zh:60c58abe49b31ed47d92e28b389054e2a81cc9e4aceed704e4a52d143c78e3f9",
-    "zh:b3dd78f4601b5409d3098503160a3beca3413078d463f29f4b02dcd2ecd1e50a",
-    "zh:c30da701dda12f86eddfccdb8be1333dd6998fd8c345aa37d60684b7dfba963a",
-    "zh:d34c5f3aba98d1631bcda09afd18a7920ddff4513ac93ec07f2697d5a28be5ef",
-    "zh:dfdef58ff2b729d88c956da143410e245e8e4b5fe07fcb6c6872797c9c025e20",
+    "h1:Ck8Re/28x7VBI5ArFg0VSg1woPu/APm1ZbMuzqUdnPo=",
+    "h1:ItrWfCZMzM2JmvDncihBMalNLutsAk7kyyxVRaipftY=",
+    "h1:gLFn+RvP37sVzp9qnFCwngRjjFV649r6apjxvJ1E/SE=",
+    "h1:iNdaB+j0xQtWLbyN2CC936r/wbSGSU345JKi0dArAhA=",
+    "h1:l5yjoR/G2v6Zo4aHmcduBPx3pEu1A5HCwaXxwGQB2Ac=",
+    "h1:mX2AOFIMIxJmW5kM8DT51gloIOKCr9iT6W8yodnUyfs=",
+    "h1:onB2WqHlxg3IHoF59X9N1ps9LyVuNy8LrVNHAkGwKEI=",
+    "h1:tK3u7J4Ojrnx62lRvLok/XGvA7gzMkaVqNOZUDzWKOw=",
+    "h1:wxgyuxCscG26n9/3zSUb68HAS4GI8HwZnkp1FJy0OvQ=",
   ]
 }
 
