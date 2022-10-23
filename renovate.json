@@ -7,10 +7,18 @@
     ],
     "regexManagers": [
         {
-          "fileMatch": ["^bin/setup-ci$"],
-          "matchStrings": ["GO_VERSION=(?<currentValue>.*?)\\n"],
-          "depNameTemplate": "golang",
-          "datasourceTemplate": "golang"
+          "fileMatch": ["^bin\\/.*$"],
+          "matchStrings": [
+            "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?_VERSION=(?<currentValue>.*)\\s"
+          ],
+          "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+        },
+        {
+          "fileMatch": ["^\\.github\\/workflows\\/[^\\/]+\\.ya?ml$"],
+          "matchStrings": [
+            "datasource=(?<datasource>.+?) depName=(?<depName>.+?)( versioning=(?<versioning>.*?))?\\s+\\w+?\\:\\s'?(?<currentValue>.+?)'?\\s"
+          ],
+          "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
         }
       ]
 }
