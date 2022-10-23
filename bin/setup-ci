@@ -23,7 +23,7 @@ apt-get update && apt-get install -y \
     terraform
 
 curl -L -O https://go.dev/dl/go${GO_VERSION}.linux-amd64.tar.gz
-tar -C /usr/local -xzf go1.18.1.linux-amd64.tar.gz
-rm go1.18.1.linux-amd64.tar.gz
+tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz
+rm go${GO_VERSION}.linux-amd64.tar.gz
 
 go install mvdan.cc/sh/v3/cmd/shfmt@latest
