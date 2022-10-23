@@ -1,24 +1,37 @@
 {
-    "extends": [
-        "config:base"
-    ],
-    "ignorePaths": [
-        "cue.mod/**"
-    ],
-    "regexManagers": [
-        {
-          "fileMatch": ["^bin\\/.*$"],
-          "matchStrings": [
-            "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?_VERSION=(?<currentValue>.*)\\s"
-          ],
-          "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
-        },
-        {
-          "fileMatch": ["^\\.github\\/workflows\\/[^\\/]+\\.ya?ml$"],
-          "matchStrings": [
-            "datasource=(?<datasource>.+?) depName=(?<depName>.+?)( versioning=(?<versioning>.*?))?\\s+\\w+?\\:\\s'?(?<currentValue>.+?)'?\\s"
-          ],
-          "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
-        }
-      ]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "ignorePaths": [
+    "cue.mod/**"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "^bin\\/.*$"
+      ],
+      "matchStrings": [
+        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?_VERSION=(?<currentValue>.*)\\s"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    },
+    {
+      "fileMatch": [
+        "^\\.github\\/workflows\\/[^\\/]+\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?version: (?<currentValue>.*)\\s"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    }
+  ],
+  "packageRules": [
+    {
+      "packageNames": [
+        "dagger/dagger"
+      ],
+      "extractVersion": "^v(?<version>.*)$"
+    }
+  ]
 }
