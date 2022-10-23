@@ -16,6 +16,6 @@ jobs:
         # See all options at https://github.com/dagger/dagger-for-github
         uses: dagger/dagger-for-github@v3
         with:
-          # renovate: datasource=github-releases depName=dagger/dagger
+          # renovate: datasource=github-releases depName=dagger/dagger versioning=semver-coerced
           version: 0.2
           cmds: do lint
