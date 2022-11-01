@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # renovate: datasource=golang-version depName=golang
-GO_VERSION=1.19.2
+GO_VERSION=1.19.3
 export GOPATH=$HOME/.go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
