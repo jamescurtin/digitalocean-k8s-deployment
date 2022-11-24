@@ -13,6 +13,10 @@ By default, the k8s cluster deploys come with:
 * [External DNS](https://github.com/bitnami/charts/tree/master/bitnami/external-dns) (automates the creation of CNAME records when new services are deployed)
 * [Gatekeeper](https://open-policy-agent.github.io/gatekeeper/website/docs/)
 
+The following optional services are deployed and should be removed from `main.tf` if they are not desired.
+
+* [Ntfy](https://ntfy.sh/) (Simple pub/sub based notification service)
+
 The project is configured to be run using [Terraform Cloud](https://app.terraform.io/), and plans/applies are conducted remotely.
 
 ## First time setup

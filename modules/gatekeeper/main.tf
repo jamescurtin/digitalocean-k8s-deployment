@@ -27,23 +27,6 @@ resource "helm_release" "gatekeeper" {
   ]
 }
 
-# Requires Ingress resources to be HTTPS only.
-resource "kubectl_manifest" "httpsonly_template" {
-  yaml_body = data.http.httpsonly_template.body
-
-  depends_on = [
-    helm_release.gatekeeper,
-  ]
-}
-
-resource "kubectl_manifest" "httpsonly_constraint" {
-  yaml_body = data.http.httpsonly_constraint.body
-
-  depends_on = [
-    kubectl_manifest.httpsonly_template,
-  ]
-}
-
 # Requires all Ingress rule hosts to be unique.
 # Ingress resources must:
 #       - include a valid TLS configuration

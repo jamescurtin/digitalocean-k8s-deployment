@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ntfy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ntfy
+  template:
+    metadata:
+      labels:
+        app: ntfy
+    spec:
+      containers:
+      - name: ntfy
+        image: binwiederhier/ntfy:v1.29.1
+        args:
+          - serve
+        volumeMounts:
+        - name: ntfy-cfg
+          mountPath: /etc/ntfy/server.yml
+          subPath: config
+        ports:
+        - containerPort: 80
+        env:
+        - name: TZ
+          value: "{{ .Values.timezone }}"
+        resources:
+          requests:
+            memory: "32Mi"
+            cpu: "50m"
+      volumes:
+      - name: ntfy-cfg
+        configMap:
+          name: ntfy-configmap
