@@ -149,3 +149,17 @@ module "gatekeeper" {
 #     module.cert_automation,
 #   ]
 # }
+
+# Optional Services
+module "ntfy" {
+  source = "./modules/ntfy"
+
+  external_domain      = var.external_domain
+  deployment_subdomain = var.ntfy_subdomain
+  timezone             = var.timezone
+
+  depends_on = [
+    module.external_dns,
+    module.cert_automation,
+  ]
+}

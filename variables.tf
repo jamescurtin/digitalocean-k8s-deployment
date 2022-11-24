@@ -93,3 +93,17 @@ variable "maintenance_start_time" {
   type        = string
   default     = "03:00"
 }
+
+variable "ntfy_subdomain" {
+  description = "A subdomain of the `external_domain` that will be used for push notifications"
+  type        = string
+  sensitive   = true
+  default     = "ntfy"
+}
+
+variable "timezone" {
+  description = "Timezone of the deployment"
+  type        = string
+  sensitive   = true
+  default     = "UTC"
+}

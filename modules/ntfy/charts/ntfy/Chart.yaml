@@ -1,0 +1,4 @@
+name: ntfy
+apiVersion: v2
+description: ntfy push notification server
+version: 0.0.1
