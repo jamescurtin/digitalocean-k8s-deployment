@@ -17,5 +17,5 @@ jobs:
         uses: dagger/dagger-for-github@v3
         with:
           # renovate: datasource=github-releases depName=dagger/dagger versioning=semver-coerced
-          version: 0.2.36
+          version: 0.3.7
           cmds: do lint
