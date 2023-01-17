@@ -5,5 +5,5 @@ controller:
   service:
     annotations:
       "service.beta.kubernetes.io/do-loadbalancer-enable-proxy-protocol": "true"
-    externalTrafficPolicy: "Local"
+    externalTrafficPolicy: "Cluster"
     type: "LoadBalancer"
