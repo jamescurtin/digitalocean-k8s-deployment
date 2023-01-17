@@ -133,10 +133,6 @@ module "cert_automation" {
   ]
 }
 
-module "gatekeeper" {
-  source = "./modules/gatekeeper"
-}
-
 # Uncomment for an example of the DNS record and TLS cert automation in action
 
 # module "example_deployment" {

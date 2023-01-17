@@ -1,4 +1,0 @@
-# See https://github.com/open-policy-agent/gatekeeper/tree/master/charts/gatekeeper
-controllerManager:
-  exemptNamespaces:
-    - "kube-system"

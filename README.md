@@ -11,7 +11,6 @@ By default, the k8s cluster deploys come with:
 * [Ingress Nginx](https://kubernetes.github.io/ingress-nginx)
 * [Cert Manager](https://github.com/cert-manager/cert-manager) (Automatically provision and manage TLS certificates)
 * [External DNS](https://github.com/bitnami/charts/tree/master/bitnami/external-dns) (automates the creation of CNAME records when new services are deployed)
-* [Gatekeeper](https://open-policy-agent.github.io/gatekeeper/website/docs/)
 
 The following optional services are deployed and should be removed from `main.tf` if they are not desired.
 
@@ -82,11 +81,6 @@ See `variables.tf`
 This cluster comes with automated DNS record creation and TLS cert automation.
 Using this functionality requires that specific annotations be set on the deployment's ingress.
 The Helm chart contained within the `example-deployment` module provides an example of what these annotations look like.
-
-## Using Gatekeeper
-
-Gatekeeper is used as an admission controller on the cluster.
-A few basic rules from the [OPA Policy Library](https://github.com/open-policy-agent/gatekeeper-librar) are applied by default
 
 ## Limitations / Caveats
 
