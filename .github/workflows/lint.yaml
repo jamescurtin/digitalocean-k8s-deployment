@@ -6,6 +6,7 @@ on:
   pull_request:
     branches: [main]
 
+# TODO: There are breaking changes in dagger; once things stabilize, this needs to be updated.
 jobs:
   dagger:
     runs-on: ubuntu-latest

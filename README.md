@@ -89,20 +89,26 @@ The Helm chart contained within the `example-deployment` module provides an exam
 
 ## Development
 
-Install [`dagger`](https://docs.dagger.io/1200/local-dev) to run the local CI pipeline.
+Install [`dagger-cue`](https://docs.dagger.io/sdk/cue/526369/install) to run the local CI pipeline.
 Dagger depends on Docker engine.
+
+To make sure dependencies are up to date:
+
+```bash
+dagger-cue project update
+```
 
 To run the lint suite:
 
 ```bash
-dagger do lint
+dagger-cue do lint
 ```
 
 If linting fails, many style guidelines can be automatically applied by:
 
 ```bash
-dagger do fix
+dagger-cue do fix
 ```
 
-`dagger` may take a long time the first time it runs, as it must build docker images.
+`dagger-cue` may take a long time the first time it runs, as it must build docker images.
 You can increase the output verbosity to observe the build progress with the flag `--log-format plain`
